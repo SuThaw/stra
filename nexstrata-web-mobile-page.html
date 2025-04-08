@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXSTRATA - Web & Mobile Services</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0033b3;
+            --secondary-color: #ffffff;
+            --text-color: #333333;
+            --light-gray: #f4f4f4;
+            --dark-gray: #555555;
+            --border-color: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 4rem 0;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Service Description Section */
+        .service-intro {
+            padding: 4rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .service-intro-header {
+            margin-bottom: 2rem;
+        }
+        
+        .service-intro-header h2 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .service-intro-header h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Competencies Section */
+        .competencies {
+            padding: 4rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .competency-item {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+        }
+        
+        .competency-item:last-child {
+            border-bottom: none;
+        }
+        
+        .competency-description {
+            flex: 2;
+            padding-right: 2rem;
+        }
+        
+        .competency-description h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .competency-services {
+            flex: 1;
+        }
+        
+        .competency-services ul {
+            list-style: none;
+        }
+        
+        .competency-services li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--secondary-color);
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .competency-item {
+                flex-direction: column;
+            }
+            
+            .competency-description {
+                padding-right: 0;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">NEXSTRATA</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="nexstrata-portfolio-page.html">Portfolio</a></li>
+                <li><a href="nexstrata-about-page.html">About</a></li>
+                <li><a href="nexstrata-contact-page.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Web & Mobile</h1>
+            <p>Web & mobile solutions drive digital transformation, enhance user engagement, optimize experience, and fuel business growth with innovative, efficient applications.</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="service-intro">
+        <div class="container">
+            <div class="service-intro-header">
+                <h2>HOW WE CAN HELP</h2>
+                <h3>Our Core Competencies</h3>
+            </div>
+            <p>Web & mobile solutions cover key areas: design, frontend and backend development, quality assurance, data management, and agile delivery, ensuring user-friendly, secure, and high-performing applications for business success.</p>
+        </div>
+    </section>
+
+    <!-- Competencies Section -->
+    <section class="competencies">
+        <div class="container">
+            <!-- Design -->
+            <div class="competency-item">
+                <div class="competency-description">
+                    <h3>Design</h3>
+                    <p>Design creates visually appealing, user-friendly interfaces, ensuring applications are intuitive, engaging, and aligned with brand identity and user expectations.</p>
+                </div>
+                <div class="competency-services">
+                    <ul>
+                        <li>UX Design</li>
+                        <li>UI Design</li>
+                        <li>User Research</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Frontend Development -->
+            <div class="competency-item">
+                <div class="competency-description">
+                    <h3>Frontend Development</h3>
+                    <p>Frontend development builds the client-side of applications, ensuring responsiveness, improvements, and optimal performance across devices and browsers.</p>
+                </div>
+                <div class="competency-services">
+                    <ul>
+                        <li>React</li>
+                        <li>Vue.js</li>
+                        <li>Angular</li>
+                        <li>React Native & iOS/Android</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Backend Development -->
+            <div class="competency-item">
+                <div class="competency-description">
+                    <h3>Backend Development</h3>
+                    <p>Backend development handles the server-side, including database management, server configuration, and service integration, ensuring applications are robust, scalable, and secure.</p>
+                </div>
+                <div class="competency-services">
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Java (SpringBoot)</li>
+                        <li>.NET</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Quality Assurance -->
+            <div class="competency-item">
+                <div class="competency-description">
+                    <h3>Quality Assurance</h3>
+                    <p>Quality assurance (QA) rigorously tests applications for reliability, functionality, performance, and security to ensure they meet requirements and are bug-free.</p>
+                </div>
+                <div class="competency-services">
+                    <ul>
+                        <li>Manual QA</li>
+                        <li>QA Automation</li>
+                        <li>TDD</li>
+                        <li>Code Audit</li>
+                        <li>Coding Practices & Refactoring</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Data Management & Security -->
+            <div class="competency-item">
+                <div class="competency-description">
+                    <h3>Data Management & Security</h3>
+                    <p>Data management securely protects user data, ensures regulatory compliance, and maintains insights through encryption, access controls, and robust data governance.</p>
+                </div>
+                <div class="competency-services">
+                    <ul>
+                        <li>Databases</li>
+                        <li>Data Integration</li>
+                        <li>DevSecOps</li>
+                        <li>Access Control</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Agile Processes & Delivery -->
+            <div class="competency-item">
+                <div class="competency-description">
+                    <h3>Agile Processes & Delivery</h3>
+                    <p>Agile processes focus on flexible, iterative development and timely project delivery, enabling continuous feedback, quick adjustments, and efficient management to meet user needs.</p>
+                </div>
+                <div class="competency-services">
+                    <ul>
+                        <li>Agile mindset</li>
+                        <li>Scrum</li>
+                        <li>Kanban</li>
+                        <li>Agile Tools</li>
+                        <li>Continuous Improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="nexstrata-privacy-page.html">PRIVACY & TERMS</a>
+                </div>
+                <p class="copyright">Made with ❤️ by Squarespace</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for additional interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Add animation to competency items on scroll
+            const competencyItems = document.querySelectorAll('.competency-item');
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateX(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            competencyItems.forEach((item, index) => {
+                item.style.opacity = 0;
+                item.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

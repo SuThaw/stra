@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXSTRATA - About Us</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0033b3;
+            --secondary-color: #ffffff;
+            --text-color: #333333;
+            --light-gray: #f4f4f4;
+            --dark-gray: #555555;
+            --border-color: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 4rem;
+        }
+        
+        .about-title {
+            flex: 1;
+        }
+        
+        .about-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content {
+            flex: 2;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background-color: #222;
+            color: var(--secondary-color);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--secondary-color);
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .about-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">NEXSTRATA</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="nexstrata-portfolio-page.html">Portfolio</a></li>
+                <li><a href="nexstrata-about-page.html" class="active">About</a></li>
+                <li><a href="nexstrata-contact-page.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container about-container">
+            <div class="about-title">
+                <h2>About</h2>
+            </div>
+            <div class="about-content">
+                <p>Every day, we collaborate with one main purpose: to create impact through amazing people and technology. Our mission goes beyond profits—it's about making a meaningful impact, inspiring joy, and discovering new possibilities. We believe technology should do more than just go digital for the sake of it; it should solve problems once thought impossible, spark creativity, and help us find new solutions. Let's dream big together.</p>
+                <p>We are experts in digital transformation, helping companies navigate complex technology landscapes with strategic thinking and hands-on implementation. Our team brings together diverse perspectives and deep expertise to deliver solutions that not only meet current needs but position your business for future success.</p>
+                <p>With decades of combined experience across industries including finance, healthcare, retail, and technology, we understand the unique challenges facing today's businesses. We're committed to being the partner you can trust to guide your digital journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Work Together</h2>
+                <p>Ready to transform your business with innovative technology solutions? We're here to help you navigate the digital landscape and achieve your goals.</p>
+                <a href="nexstrata-contact-page.html" class="cta-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="nexstrata-privacy-page.html">PRIVACY & TERMS</a>
+                </div>
+                <p class="copyright">Made with ❤️ by Squarespace</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Add reveal animation on scroll
+            const aboutContent = document.querySelector('.about-content');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            aboutContent.style.opacity = 0;
+            aboutContent.style.transform = 'translateY(20px)';
+            aboutContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(aboutContent);
+        });
+    </script>
+</body>
+</html>

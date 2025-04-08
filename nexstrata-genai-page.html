@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXSTRATA - Gen AI Services</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0033b3;
+            --secondary-color: #ffffff;
+            --text-color: #333333;
+            --light-gray: #f4f4f4;
+            --dark-gray: #555555;
+            --border-color: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 4rem 0;
+            position: relative;
+            background-image: linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 4rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .benefits-header {
+            margin-bottom: 3rem;
+        }
+        
+        .benefits-header h2 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .benefits-header h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefits-description {
+            margin-bottom: 3rem;
+        }
+        
+        /* Competencies Section */
+        .competencies {
+            padding: 2rem 0;
+        }
+        
+        .competency-item {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+        }
+        
+        .competency-item:last-child {
+            border-bottom: none;
+        }
+        
+        .competency-description {
+            flex: 2;
+            padding-right: 2rem;
+        }
+        
+        .competency-description h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .competency-services {
+            flex: 1;
+        }
+        
+        .competency-services ul {
+            list-style: none;
+        }
+        
+        .competency-services li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--secondary-color);
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .competency-item {
+                flex-direction: column;
+            }
+            
+            .competency-description {
+                padding-right: 0;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">NEXSTRATA</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="nexstrata-portfolio-page.html">Portfolio</a></li>
+                <li><a href="nexstrata-about-page.html">About</a></li>
+                <li><a href="nexstrata-contact-page.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Gen AI</h1>
+            <p>Gen AI Services empower your company to drive growth, enhance productivity, and gain a competitive edge through advanced AI technologies, personalized experiences, and innovative insights.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-header">
+                <h2>HOW CAN WE HELP</h2>
+                <h3>How can your business benefit from leveraging GenAI?</h3>
+            </div>
+            <div class="benefits-description">
+                <p>GenAI covers key areas essential for modern businesses, including strategy, development, model evaluation, deployment, and third-party integration, ensuring seamless implementation and scalable solutions.</p>
+            </div>
+            
+            <!-- Competencies Section -->
+            <div class="competencies">
+                <!-- Business Strategy -->
+                <div class="competency-item">
+                    <div class="competency-description">
+                        <h3>Business Strategy</h3>
+                        <p>A solid business strategy aligns your company's vision with actionable goals, using GenAI to optimize processes, improve decision-making, and drive innovation.</p>
+                    </div>
+                    <div class="competency-services">
+                        <ul>
+                            <li>Business Goals</li>
+                            <li>Use Cases Exploration</li>
+                            <li>Feasibility Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Gen AI Development -->
+                <div class="competency-item">
+                    <div class="competency-description">
+                        <h3>Gen AI Development</h3>
+                        <p>GenAI development creates custom AI solutions tailored to your needs, building advanced models to solve complex problems and deliver unique value.</p>
+                    </div>
+                    <div class="competency-services">
+                        <ul>
+                            <li>Prompt Engineering</li>
+                            <li>Fine-Tuning</li>
+                            <li>Build RAG</li>
+                            <li>Guardrails</li>
+                            <li>Automate with agent</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Model Evaluation -->
+                <div class="competency-item">
+                    <div class="competency-description">
+                        <h3>Model Evaluation</h3>
+                        <p>Model evaluation ensures your AI models perform accurately and reliably, meeting required standards through rigorous testing and validation.</p>
+                    </div>
+                    <div class="competency-services">
+                        <ul>
+                            <li>Performance metrics</li>
+                            <li>Evaluation</li>
+                            <li>Benchmarking</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Deployment -->
+                <div class="competency-item">
+                    <div class="competency-description">
+                        <h3>Deployment</h3>
+                        <p>Deployment integrates AI models into your systems, ensuring scalability and seamless alignment with your business operations.</p>
+                    </div>
+                    <div class="competency-services">
+                        <ul>
+                            <li>Security & Data Privacy</li>
+                            <li>Scalability</li>
+                            <li>Monitoring and Alerting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="nexstrata-privacy-page.html">PRIVACY & TERMS</a>
+                </div>
+                <p class="copyright">Made with ❤️ by Squarespace</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for additional interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Add animation to competency items on scroll
+            const competencyItems = document.querySelectorAll('.competency-item');
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            competencyItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
