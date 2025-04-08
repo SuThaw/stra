@@ -42,6 +42,29 @@
       .delay-600 {
         animation-delay: 0.6s;
       }
+
+      /* Dropdown styles */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 50;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      /* Mobile dropdown menu */
+      .mobile-submenu {
+        display: none;
+        padding-left: 1rem;
+      }
+
+      .mobile-submenu.active {
+        display: block;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-800 leading-normal">
@@ -58,10 +81,61 @@
             <li>
               <a href="index.html" class="text-white hover:underline">Home</a>
             </li>
-            <li>
-              <a href="#services" class="text-white hover:underline"
-                >Services</a
+            <li class="dropdown relative">
+              <a
+                href="#services"
+                class="text-white hover:underline flex items-center"
               >
+                Services
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                class="dropdown-menu bg-white text-gray-800 p-4 rounded shadow-lg w-56"
+              >
+                <a
+                  href="nexstrata-design-page.html"
+                  class="block py-2 hover:text-blue-800"
+                  >Design</a
+                >
+                <a
+                  href="nexstrata-web-mobile-page.html"
+                  class="block py-2 hover:text-blue-800"
+                  >Web & Mobile</a
+                >
+                <a
+                  href="nexstrata-tech-arch-page.html"
+                  class="block py-2 hover:text-blue-800"
+                  >Tech Architecture</a
+                >
+                <a
+                  href="nexstrata-aws-page.html"
+                  class="block py-2 hover:text-blue-800"
+                  >AWS</a
+                >
+                <a
+                  href="nexstrata-prototype-page.html"
+                  class="block py-2 hover:text-blue-800"
+                  >Prototyping</a
+                >
+                <a
+                  href="nexstrata-genai-page.html"
+                  class="block py-2 hover:text-blue-800"
+                  >Gen AI</a
+                >
+              </div>
             </li>
             <li>
               <a
@@ -121,11 +195,74 @@
               >
             </li>
             <li>
-              <a
-                href="#services"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Services</a
+              <div
+                class="flex justify-between items-center text-white p-2 rounded hover:bg-blue-600"
               >
+                <a href="#services">Services</a>
+                <button id="mobile-services-toggle" class="focus:outline-none">
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <ul
+                class="mobile-submenu ml-4 mt-1 space-y-1"
+                id="mobile-services-submenu"
+              >
+                <li>
+                  <a
+                    href="nexstrata-design-page.html"
+                    class="block text-white hover:bg-blue-600 p-2 rounded"
+                    >Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="nexstrata-web-mobile-page.html"
+                    class="block text-white hover:bg-blue-600 p-2 rounded"
+                    >Web & Mobile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="nexstrata-tech-arch-page.html"
+                    class="block text-white hover:bg-blue-600 p-2 rounded"
+                    >Tech Architecture</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="nexstrata-aws-page.html"
+                    class="block text-white hover:bg-blue-600 p-2 rounded"
+                    >AWS</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="nexstrata-prototype-page.html"
+                    class="block text-white hover:bg-blue-600 p-2 rounded"
+                    >Prototyping</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="nexstrata-genai-page.html"
+                    class="block text-white hover:bg-blue-600 p-2 rounded"
+                    >Gen AI</a
+                  >
+                </li>
+              </ul>
             </li>
             <li>
               <a
@@ -221,6 +358,11 @@
                 outcomes, combining appealing visuals and functionality to meet
                 user needs and drive business success.
               </p>
+              <a
+                href="nexstrata-design-page.html"
+                class="inline-block mt-4 text-white font-semibold hover:underline"
+                >Learn more →</a
+              >
             </div>
           </div>
 
@@ -248,6 +390,11 @@
                 user engagement, optimize experience, and fuel business growth
                 with innovative, efficient applications.
               </p>
+              <a
+                href="nexstrata-web-mobile-page.html"
+                class="inline-block mt-4 text-white font-semibold hover:underline"
+                >Learn more →</a
+              >
             </div>
           </div>
 
@@ -275,6 +422,11 @@
                 secure, and efficient systems by focusing on system design, data
                 management, security, and performance.
               </p>
+              <a
+                href="nexstrata-tech-arch-page.html"
+                class="inline-block mt-4 text-white font-semibold hover:underline"
+                >Learn more →</a
+              >
             </div>
           </div>
         </div>
@@ -310,6 +462,11 @@
                 accelerate growth, and stay competitive in dynamic digital
                 landscapes.
               </p>
+              <a
+                href="nexstrata-aws-page.html"
+                class="inline-block mt-4 text-white font-semibold hover:underline"
+                >Learn more →</a
+              >
             </div>
           </div>
 
@@ -337,6 +494,11 @@
                 validate concepts, gather feedback, and accelerate development,
                 improving market fit and reducing time to market.
               </p>
+              <a
+                href="nexstrata-prototype-page.html"
+                class="inline-block mt-4 text-white font-semibold hover:underline"
+                >Learn more →</a
+              >
             </div>
           </div>
 
@@ -365,6 +527,11 @@
                 productivity, and gain a competitive edge through advanced AI
                 technologies, personalized experiences, and innovative insights.
               </p>
+              <a
+                href="nexstrata-genai-page.html"
+                class="inline-block mt-4 text-white font-semibold hover:underline"
+                >Learn more →</a
+              >
             </div>
           </div>
         </div>
@@ -401,7 +568,7 @@
               >PRIVACY & TERMS</a
             >
           </div>
-          <p class="text-sm text-gray-400">Made with ❤️ by Squarespace</p>
+          <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
         </div>
       </div>
     </footer>
@@ -411,10 +578,23 @@
       document.addEventListener("DOMContentLoaded", function () {
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
+        const mobileServicesToggle = document.getElementById(
+          "mobile-services-toggle",
+        );
+        const mobileServicesSubmenu = document.getElementById(
+          "mobile-services-submenu",
+        );
 
         mobileMenuButton.addEventListener("click", function () {
           mobileMenu.classList.toggle("hidden");
         });
+
+        // Mobile services submenu toggle
+        if (mobileServicesToggle) {
+          mobileServicesToggle.addEventListener("click", function () {
+            mobileServicesSubmenu.classList.toggle("active");
+          });
+        }
 
         // Handle smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
