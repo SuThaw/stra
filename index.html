@@ -1,437 +1,463 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEXSTRATA - Digital Solutions</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #0033b3;
-            --secondary-color: #ffffff;
-            --text-color: #333333;
-            --light-gray: #f4f4f4;
-            --dark-gray: #555555;
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 1rem 0;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 4rem 0;
-            position: relative;
-            background-image: linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)), url('/api/placeholder/1200/600');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 5rem 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-subheader {
-            color: var(--primary-color);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-description {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--dark-gray);
-        }
-        
-        .service-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .service-card {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            border-radius: 5px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-icon {
-            padding: 2rem 0;
-            font-size: 2rem;
-        }
-        
-        .service-content {
-            padding: 1.5rem;
-        }
-        
-        .service-content h3 {
-            margin-bottom: 1rem;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-content p {
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid var(--secondary-color);
-            border-radius: 3px;
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #000;
-            color: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: var(--secondary-color);
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: #aaa;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .service-cards {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+      .delay-600 {
+        animation-delay: 0.6s;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body class="font-sans text-gray-800 leading-normal">
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">NEXSTRATA</a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="nexstrata-portfolio-page.html">Portfolio</a></li>
-                <li><a href="nexstrata-about-page.html">About</a></li>
-                <li><a href="nexstrata-contact-page.html">Contact</a></li>
-            </ul>
+    <header class="bg-blue-800 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="text-xl font-bold uppercase tracking-wider">
+          <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
         </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="index.html" class="text-white hover:underline">Home</a>
+            </li>
+            <li>
+              <a href="#services" class="text-white hover:underline"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-portfolio-page.html"
+                class="text-white hover:underline"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-about-page.html"
+                class="text-white hover:underline"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-contact-page.html"
+                class="text-white hover:underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button
+          class="md:hidden text-white focus:outline-none"
+          id="mobile-menu-button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
+        <div class="container mx-auto px-4">
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-portfolio-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-about-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-contact-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Bringing your next digital idea to life with precision and speed.</h1>
-            <p>Rapid prototyping in just 3 weeks. Design, Tech Architecture, Web & Mobile solutions.</p>
+    <section
+      class="bg-blue-800 text-white py-16 bg-opacity-90 bg-gradient-to-r from-blue-800 to-blue-900"
+      style="
+        background-image: url(&quot;/api/placeholder/1200/600&quot;);
+        background-blend-mode: overlay;
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Bringing your next digital idea to life with precision and speed.
+          </h1>
+          <p class="text-lg mb-8">
+            Rapid prototyping in just 3 weeks. Design, Tech Architecture, Web &
+            Mobile solutions.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subheader">Our Services</p>
-                <h2 class="section-title">What We Offer</h2>
-                <p class="section-description">As a people-centric, innovation-driven studio with diverse specialties, we turn ideas into stellar products. We partner with you, clients to develop transformational journeys that drive genuine success.</p>
-            </div>
-            
-            <div class="service-cards">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                            <path d="M2 2l7.586 7.586"></path>
-                            <circle cx="11" cy="11" r="2"></circle>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Design</h3>
-                        <p>Digital product design delivers innovative, user-specific outcomes, combining appealing visuals and functionality to meet user needs and drive business success.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Web & Mobile</h3>
-                        <p>Web & mobile solutions deliver digital transformation, enhance user engagement, optimize experience, and fuel business growth with innovative, efficient applications.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Tech Architecture</h3>
-                        <p>Tech architecture enables your company to build reliable, secure, and efficient systems by focusing on system design, data management, security, and performance.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="service-cards" style="margin-top: 2rem;">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>AWS</h3>
-                        <p>AWS solutions offer unmatched scalability, security, and efficiency, enabling your company to scale effectively, accelerate growth, and stay competitive in dynamic digital landscapes.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Prototyping</h3>
-                        <p>Digital prototyping allows your company to quickly test ideas, validate concepts, gather feedback, and accelerate development, improving market fit and reducing time to market.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v6.5l5 3 5-3V2"></path>
-                            <path d="M2 9V2h10v6.5l-5 3z"></path>
-                            <path d="M12 18.5v-9l-5-3-5 3v9l5 3z"></path>
-                            <path d="M22 18.5v-9l-5-3-5 3v9l5 3z"></path>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Gen AI</h3>
-                        <p>Gen AI services empower your company to drive growth, enhance productivity, and gain a competitive edge through advanced AI technologies, personalized experiences, and innovative insights.</p>
-                    </div>
-                </div>
-            </div>
+    <section id="services" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-blue-800 uppercase font-semibold text-sm mb-2">
+            Our Services
+          </p>
+          <h2 class="text-3xl font-bold mb-4">What We Offer</h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            As a people-centric, innovation-driven studio with diverse
+            specialties, we turn ideas into stellar products. We partner with
+            you, clients to develop transformational journeys that drive genuine
+            success.
+          </p>
         </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 opacity-0 transform translate-y-8"
+          id="service-row-1"
+        >
+          <!-- Design -->
+          <div
+            class="bg-blue-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="p-8 text-center">
+              <div class="mb-4">
+                <svg
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Design</h3>
+              <p>
+                Digital product design delivers innovative, user-specific
+                outcomes, combining appealing visuals and functionality to meet
+                user needs and drive business success.
+              </p>
+            </div>
+          </div>
+
+          <!-- Web & Mobile -->
+          <div
+            class="bg-blue-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="p-8 text-center">
+              <div class="mb-4">
+                <svg
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Web & Mobile</h3>
+              <p>
+                Web & mobile solutions deliver digital transformation, enhance
+                user engagement, optimize experience, and fuel business growth
+                with innovative, efficient applications.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tech Architecture -->
+          <div
+            class="bg-blue-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="p-8 text-center">
+              <div class="mb-4">
+                <svg
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Tech Architecture</h3>
+              <p>
+                Tech architecture enables your company to build reliable,
+                secure, and efficient systems by focusing on system design, data
+                management, security, and performance.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-0 transform translate-y-8"
+          id="service-row-2"
+        >
+          <!-- AWS -->
+          <div
+            class="bg-blue-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="p-8 text-center">
+              <div class="mb-4">
+                <svg
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  ></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">AWS</h3>
+              <p>
+                AWS solutions offer unmatched scalability, security, and
+                efficiency, enabling your company to scale effectively,
+                accelerate growth, and stay competitive in dynamic digital
+                landscapes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Prototyping -->
+          <div
+            class="bg-blue-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="p-8 text-center">
+              <div class="mb-4">
+                <svg
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Prototyping</h3>
+              <p>
+                Digital prototyping allows your company to quickly test ideas,
+                validate concepts, gather feedback, and accelerate development,
+                improving market fit and reducing time to market.
+              </p>
+            </div>
+          </div>
+
+          <!-- Gen AI -->
+          <div
+            class="bg-blue-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+          >
+            <div class="p-8 text-center">
+              <div class="mb-4">
+                <svg
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 2v6.5l5 3 5-3V2"></path>
+                  <path d="M2 9V2h10v6.5l-5 3z"></path>
+                  <path d="M12 18.5v-9l-5-3-5 3v9l5 3z"></path>
+                  <path d="M22 18.5v-9l-5-3-5 3v9l5 3z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Gen AI</h3>
+              <p>
+                Gen AI services empower your company to drive growth, enhance
+                productivity, and gain a competitive edge through advanced AI
+                technologies, personalized experiences, and innovative insights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container cta-content">
-            <h2>Let's Work Together</h2>
-            <p>We're always looking for new opportunities and are continuously solving challenges. Let us know what you're thinking and we'll help transform your idea to success.</p>
-            <a href="nexstrata-contact-page.html" class="btn">Contact Us</a>
+    <section class="py-16 bg-blue-800 text-white text-center">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
+          <p class="mb-8">
+            We're always looking for new opportunities and are continuously
+            solving challenges. Let us know what you're thinking and we'll help
+            transform your idea to success.
+          </p>
+          <a
+            href="nexstrata-contact-page.html"
+            class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300"
+            >Contact Us</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="nexstrata-privacy-page.html">PRIVACY & TERMS</a>
-                </div>
-                <p class="copyright">Made with ❤️ by Squarespace</p>
-            </div>
+    <footer class="bg-black text-white py-8 text-center">
+      <div class="container mx-auto px-4">
+        <div class="mb-6">
+          <div class="mb-4">
+            <a
+              href="nexstrata-privacy-page.html"
+              class="text-white mx-4 hover:underline"
+              >PRIVACY & TERMS</a
+            >
+          </div>
+          <p class="text-sm text-gray-400">Made with ❤️ by Squarespace</p>
         </div>
+      </div>
     </footer>
 
     <script>
-        // JavaScript for additional interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-            
-            // Add animation to services on scroll
-            const serviceCards = document.querySelectorAll('.service-card');
-            
-            const observerOptions = {
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            serviceCards.forEach(card => {
-                card.style.opacity = 0;
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
+      // Mobile menu toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
         });
+
+        // Handle smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+
+              // Close mobile menu if open
+              if (!mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+              }
+            }
+          });
+        });
+
+        // Animate service cards on scroll
+        const serviceRow1 = document.getElementById("service-row-1");
+        const serviceRow2 = document.getElementById("service-row-2");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fadeInUp");
+                entry.target.classList.remove("opacity-0");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        observer.observe(serviceRow1);
+        observer.observe(serviceRow2);
+      });
     </script>
-    <script src="scripts.js"></script>
-</body>
+  </body>
 </html>

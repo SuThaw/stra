@@ -1,388 +1,767 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEXSTRATA - Prototyping Services</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #0033b3;
-            --secondary-color: #ffffff;
-            --text-color: #333333;
-            --light-gray: #f4f4f4;
-            --dark-gray: #555555;
-            --border-color: #e0e0e0;
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
-        
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
         }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 1rem 0;
+      }
+
+      .animate-fadeInLeft {
+        animation: fadeInLeft 0.6s ease forwards;
+      }
+
+      .animate-fadeInRight {
+        animation: fadeInRight 0.6s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        to {
+          opacity: 1;
         }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 4rem 0;
-            position: relative;
-            background-image: linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)), url('/api/placeholder/1200/600');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Service Description Section */
-        .service-intro {
-            padding: 4rem 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .service-intro-header {
-            margin-bottom: 2rem;
-        }
-        
-        .service-intro-header h2 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        
-        .service-intro-header h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Competencies Section */
-        .competencies {
-            padding: 4rem 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .competency-item {
-            display: flex;
-            border-bottom: 1px solid var(--border-color);
-            padding: 2rem 0;
-        }
-        
-        .competency-item:last-child {
-            border-bottom: none;
-        }
-        
-        .competency-description {
-            flex: 2;
-            padding-right: 2rem;
-        }
-        
-        .competency-description h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .competency-services {
-            flex: 1;
-        }
-        
-        .competency-services ul {
-            list-style: none;
-        }
-        
-        .competency-services li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #000;
-            color: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: var(--secondary-color);
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: #aaa;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .competency-item {
-                flex-direction: column;
-            }
-            
-            .competency-description {
-                padding-right: 0;
-                margin-bottom: 1.5rem;
-            }
-        }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 1s ease forwards;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body class="font-sans text-gray-800 leading-normal">
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">NEXSTRATA</a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="nexstrata-portfolio-page.html">Portfolio</a></li>
-                <li><a href="nexstrata-about-page.html">About</a></li>
-                <li><a href="nexstrata-contact-page.html">Contact</a></li>
-            </ul>
+    <header class="bg-blue-800 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="text-xl font-bold uppercase tracking-wider">
+          <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
         </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="index.html" class="text-white hover:underline">Home</a>
+            </li>
+            <li>
+              <a href="index.html#services" class="text-white hover:underline"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-portfolio-page.html"
+                class="text-white hover:underline"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-about-page.html"
+                class="text-white hover:underline"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-contact-page.html"
+                class="text-white hover:underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button
+          class="md:hidden text-white focus:outline-none"
+          id="mobile-menu-button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
+        <div class="container mx-auto px-4">
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#services"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-portfolio-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-about-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-contact-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Prototyping in 3 weeks</h1>
-            <p>Digital prototyping allows your company to quickly test ideas, validate concepts, gather feedback, and accelerate development, improving market fit and reducing time to market.</p>
-        </div>
+    <section
+      class="bg-blue-800 text-white py-16 bg-opacity-85"
+      style="
+        background-image:
+          linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)),
+          url(&quot;/api/placeholder/1200/600&quot;);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Prototyping in 3 weeks
+        </h1>
+        <p class="text-lg max-w-3xl mx-auto">
+          Digital prototyping allows your company to quickly test ideas,
+          validate concepts, gather feedback, and accelerate development,
+          improving market fit and reducing time to market.
+        </p>
+      </div>
     </section>
 
     <!-- Intro Section -->
-    <section class="service-intro">
-        <div class="container">
-            <div class="service-intro-header">
-                <h2>HOW WE CAN HELP</h2>
-                <h3>Our Core Competencies</h3>
-            </div>
-            <p>Digital prototyping combines product strategy, user interviews, UX/UI design, development, and agile project management to create prototypes that align with business goals and meet user needs.</p>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="mb-8">
+          <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
+            HOW WE CAN HELP
+          </h2>
+          <h3 class="text-3xl font-bold mb-6">Our Core Competencies</h3>
         </div>
+        <p class="text-gray-600 max-w-4xl">
+          Digital prototyping combines product strategy, user interviews, UX/UI
+          design, development, and agile project management to create prototypes
+          that align with business goals and meet user needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Process Timeline Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">
+            Our 3-Week Prototyping Process
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            We follow a structured yet flexible process to take your idea from
+            concept to functional prototype in just three weeks.
+          </p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+          <!-- Timeline Line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-800 transform -translate-x-1/2"
+          ></div>
+
+          <!-- Week 1 -->
+          <div class="relative mb-16 opacity-0" id="timeline-1">
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                <h3 class="text-2xl text-blue-800 font-bold mb-3">
+                  Week 1: Discovery & Strategy
+                </h3>
+                <p class="text-gray-600">
+                  We begin by understanding your business goals, conducting user
+                  research, and defining the core features and functionality of
+                  your prototype.
+                </p>
+                <ul class="mt-4 space-y-1 md:text-right text-gray-600">
+                  <li>• Stakeholder interviews</li>
+                  <li>• User research</li>
+                  <li>• Feature prioritization</li>
+                  <li>• Technical feasibility assessment</li>
+                </ul>
+              </div>
+              <div
+                class="hidden md:flex items-center justify-center bg-blue-800 text-white rounded-full h-12 w-12 font-bold text-xl z-10"
+              >
+                1
+              </div>
+              <div class="md:w-1/2 md:pl-12 md:text-left">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <h4 class="font-semibold text-lg mb-2">Deliverables:</h4>
+                  <ul class="list-disc pl-5 text-gray-600">
+                    <li>User personas</li>
+                    <li>Feature requirements document</li>
+                    <li>Prototype scope definition</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 2 -->
+          <div class="relative mb-16 opacity-0" id="timeline-2">
+            <div class="flex flex-col md:flex-row items-center">
+              <div
+                class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-last md:order-first"
+              >
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <h4 class="font-semibold text-lg mb-2">Deliverables:</h4>
+                  <ul class="list-disc pl-5 text-gray-600">
+                    <li>Wireframes</li>
+                    <li>UI mockups</li>
+                    <li>Interactive prototype</li>
+                    <li>Initial prototype code</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="hidden md:flex items-center justify-center bg-blue-800 text-white rounded-full h-12 w-12 font-bold text-xl z-10"
+              >
+                2
+              </div>
+              <div class="md:w-1/2 md:pl-12 md:text-left">
+                <h3 class="text-2xl text-blue-800 font-bold mb-3">
+                  Week 2: Design & Development
+                </h3>
+                <p class="text-gray-600">
+                  Our designers and developers work simultaneously to create the
+                  visual design and begin building the core functionality of
+                  your prototype.
+                </p>
+                <ul class="mt-4 space-y-1 text-gray-600">
+                  <li>• Wireframing</li>
+                  <li>• UI design</li>
+                  <li>• Frontend development</li>
+                  <li>• Backend setup</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 3 -->
+          <div class="relative opacity-0" id="timeline-3">
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                <h3 class="text-2xl text-blue-800 font-bold mb-3">
+                  Week 3: Refinement & Delivery
+                </h3>
+                <p class="text-gray-600">
+                  We complete development, conduct user testing, refine the
+                  prototype based on feedback, and prepare for final delivery
+                  and presentation.
+                </p>
+                <ul class="mt-4 space-y-1 md:text-right text-gray-600">
+                  <li>• Prototype testing</li>
+                  <li>• Bug fixing</li>
+                  <li>• User feedback integration</li>
+                  <li>• Final polishing</li>
+                </ul>
+              </div>
+              <div
+                class="hidden md:flex items-center justify-center bg-blue-800 text-white rounded-full h-12 w-12 font-bold text-xl z-10"
+              >
+                3
+              </div>
+              <div class="md:w-1/2 md:pl-12 md:text-left">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <h4 class="font-semibold text-lg mb-2">Deliverables:</h4>
+                  <ul class="list-disc pl-5 text-gray-600">
+                    <li>Functional prototype</li>
+                    <li>Technical documentation</li>
+                    <li>User testing report</li>
+                    <li>Recommendations for next steps</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Competencies Section -->
-    <section class="competencies">
-        <div class="container">
-            <!-- Product Strategy -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Product Strategy</h3>
-                    <p>Product strategy defines the vision, aligns it with business goals, and decides if, concrete, ensuring prototyping efforts are focused on solving real problems.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Problem definition</li>
-                        <li>Assumptions</li>
-                        <li>Value proposition design</li>
-                        <li>Clear list of value exploration</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- User Interviews -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>User Interviews</h3>
-                    <p>User interviews provide valuable insights into needs and preferences, guiding design decisions to ensure the prototype addresses real user problems.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Insights</li>
-                        <li>Needs</li>
-                        <li>Feedback</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- UX/UI Design -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>UX/UI Design</h3>
-                    <p>UX/UI design focuses on crafting intuitive, visually appealing interfaces that deliver a seamless, engaging user experience, ensuring easy interaction with the product.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Clickable prototype</li>
-                        <li>User Story</li>
-                        <li>High Fidelity</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Development -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Development</h3>
-                    <p>Development focuses on coding and building the prototype's functionality, integrating necessary features to ensure it works as intended across all devices.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>React</li>
-                        <li>Web</li>
-                        <li>Mobile</li>
-                        <li>Backend</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Agile Project Management -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Agile Project Management</h3>
-                    <p>Agile project management fosters flexibility, iterative development, and collaboration, enabling continuous feedback and improvements to refine the prototype based on user input and evolving requirements.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Design Sprints</li>
-                        <li>Scrum</li>
-                        <li>Kanban</li>
-                        <li>Extreme programming</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Key Prototyping Competencies</h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Our multi-disciplinary team brings together all the skills needed to
+            create effective, functional prototypes.
+          </p>
         </div>
+
+        <!-- Product Strategy -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-1"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Product Strategy
+            </h3>
+            <p class="text-gray-600">
+              Product strategy defines the vision, aligns it with business
+              goals, and decides on concrete implementation approaches, ensuring
+              prototyping efforts are focused on solving real problems.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Problem definition</li>
+              <li>Assumptions</li>
+              <li>Value proposition design</li>
+              <li>Clear list of value exploration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- User Interviews -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-2"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              User Interviews
+            </h3>
+            <p class="text-gray-600">
+              User interviews provide valuable insights into needs and
+              preferences, guiding design decisions to ensure the prototype
+              addresses real user problems.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Insights gathering</li>
+              <li>Needs assessment</li>
+              <li>Feedback collection</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- UX/UI Design -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-3"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">UX/UI Design</h3>
+            <p class="text-gray-600">
+              UX/UI design focuses on crafting intuitive, visually appealing
+              interfaces that deliver a seamless, engaging user experience,
+              ensuring easy interaction with the product.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Clickable prototype</li>
+              <li>User Story mapping</li>
+              <li>High Fidelity mockups</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Development -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-4"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">Development</h3>
+            <p class="text-gray-600">
+              Development focuses on coding and building the prototype's
+              functionality, integrating necessary features to ensure it works
+              as intended across all devices.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>React</li>
+              <li>Web applications</li>
+              <li>Mobile apps</li>
+              <li>API integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Agile Project Management -->
+        <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-5">
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Agile Project Management
+            </h3>
+            <p class="text-gray-600">
+              Agile project management fosters flexibility, iterative
+              development, and collaboration, enabling continuous feedback and
+              improvements to refine the prototype based on user input and
+              evolving requirements.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Design Sprints</li>
+              <li>Scrum</li>
+              <li>Kanban</li>
+              <li>Extreme programming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Benefits of Rapid Prototyping</h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Rapid prototyping offers numerous advantages that can significantly
+            impact your product development success.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md opacity-0"
+            id="benefit-1"
+          >
+            <div class="text-blue-800 text-4xl mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Faster Time to Market</h3>
+            <p class="text-gray-600">
+              Reduce development cycles and get your product to market faster by
+              validating ideas early.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md opacity-0"
+            id="benefit-2"
+          >
+            <div class="text-blue-800 text-4xl mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Risk Reduction</h3>
+            <p class="text-gray-600">
+              Test assumptions and identify issues early when changes are less
+              costly and easier to implement.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md opacity-0"
+            id="benefit-3"
+          >
+            <div class="text-blue-800 text-4xl mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Cost Efficiency</h3>
+            <p class="text-gray-600">
+              Save development costs by focusing resources on validated ideas
+              that have proven market potential.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md opacity-0"
+            id="benefit-4"
+          >
+            <div class="text-blue-800 text-4xl mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Stakeholder Alignment</h3>
+            <p class="text-gray-600">
+              Create alignment among team members and stakeholders with a
+              tangible representation of the product vision.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md opacity-0"
+            id="benefit-5"
+          >
+            <div class="text-blue-800 text-4xl mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">User Feedback</h3>
+            <p class="text-gray-600">
+              Gather valuable user feedback on a working prototype before
+              investing in full-scale development.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md opacity-0"
+            id="benefit-6"
+          >
+            <div class="text-blue-800 text-4xl mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Investor Readiness</h3>
+            <p class="text-gray-600">
+              Approach investors with more than just an idea – demonstrate a
+              working prototype that showcases your vision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-800 text-white text-center">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6">
+            Get Your Idea to Market Faster
+          </h2>
+          <p class="mb-8">
+            Our rapid prototyping approach can take your concept from idea to
+            working prototype in just 3 weeks, helping you validate your
+            business case and accelerate time to market.
+          </p>
+          <a
+            href="nexstrata-contact-page.html"
+            class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300"
+            >Contact Us</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="nexstrata-privacy-page.html">PRIVACY & TERMS</a>
-                </div>
-                <p class="copyright">Made with ❤️ by Squarespace</p>
-            </div>
+    <footer class="bg-black text-white py-8 text-center">
+      <div class="container mx-auto px-4">
+        <div class="mb-6">
+          <div class="mb-4">
+            <a
+              href="nexstrata-privacy-page.html"
+              class="text-white mx-4 hover:underline"
+              >PRIVACY & TERMS</a
+            >
+          </div>
+          <p class="text-sm text-gray-400">Made with ❤️ by Squarespace</p>
         </div>
+      </div>
     </footer>
 
     <script>
-        // JavaScript for additional interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-            
-            // Add animation to competency items on scroll
-            const competencyItems = document.querySelectorAll('.competency-item');
-            
-            const observerOptions = {
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateX(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            competencyItems.forEach((item, index) => {
-                item.style.opacity = 0;
-                item.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
-                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(item);
-            });
+      // Mobile menu toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
         });
+
+        // Animate timeline items
+        const timelineElements = [
+          document.getElementById("timeline-1"),
+          document.getElementById("timeline-2"),
+          document.getElementById("timeline-3"),
+        ];
+
+        // Animate competency sections
+        const competencyElements = [
+          document.getElementById("competency-1"),
+          document.getElementById("competency-2"),
+          document.getElementById("competency-3"),
+          document.getElementById("competency-4"),
+          document.getElementById("competency-5"),
+        ];
+
+        // Animate benefit cards
+        const benefitElements = [
+          document.getElementById("benefit-1"),
+          document.getElementById("benefit-2"),
+          document.getElementById("benefit-3"),
+          document.getElementById("benefit-4"),
+          document.getElementById("benefit-5"),
+          document.getElementById("benefit-6"),
+        ];
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Timeline animations
+                if (timelineElements.includes(entry.target)) {
+                  entry.target.classList.add("animate-fadeIn");
+                  entry.target.classList.remove("opacity-0");
+                }
+                // Competency animations
+                else if (competencyElements.includes(entry.target)) {
+                  const index = competencyElements.indexOf(entry.target);
+                  if (index % 2 === 0) {
+                    entry.target.classList.add("animate-fadeInLeft");
+                  } else {
+                    entry.target.classList.add("animate-fadeInRight");
+                  }
+                  entry.target.classList.remove("opacity-0");
+                }
+                // Benefit animations
+                else if (benefitElements.includes(entry.target)) {
+                  entry.target.classList.add("animate-fadeIn");
+                  entry.target.style.animationDelay =
+                    benefitElements.indexOf(entry.target) * 0.1 + "s";
+                  entry.target.classList.remove("opacity-0");
+                }
+
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        // Observe all elements
+        [
+          ...timelineElements,
+          ...competencyElements,
+          ...benefitElements,
+        ].forEach((element) => {
+          if (element) observer.observe(element);
+        });
+      });
     </script>
-    <script src="scripts.js"></script>
-</body>
+  </body>
 </html>

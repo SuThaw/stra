@@ -1,407 +1,513 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NEXSTRATA - Web & Mobile Services</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #0033b3;
-            --secondary-color: #ffffff;
-            --text-color: #333333;
-            --light-gray: #f4f4f4;
-            --dark-gray: #555555;
-            --border-color: #e0e0e0;
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
-        
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
         }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 1rem 0;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 4rem 0;
-            position: relative;
-            background-image: linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)), url('/api/placeholder/1200/600');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Service Description Section */
-        .service-intro {
-            padding: 4rem 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .service-intro-header {
-            margin-bottom: 2rem;
-        }
-        
-        .service-intro-header h2 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        
-        .service-intro-header h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Competencies Section */
-        .competencies {
-            padding: 4rem 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .competency-item {
-            display: flex;
-            border-bottom: 1px solid var(--border-color);
-            padding: 2rem 0;
-        }
-        
-        .competency-item:last-child {
-            border-bottom: none;
-        }
-        
-        .competency-description {
-            flex: 2;
-            padding-right: 2rem;
-        }
-        
-        .competency-description h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .competency-services {
-            flex: 1;
-        }
-        
-        .competency-services ul {
-            list-style: none;
-        }
-        
-        .competency-services li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #000;
-            color: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: var(--secondary-color);
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            font-size: 0.85rem;
-            color: #aaa;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .competency-item {
-                flex-direction: column;
-            }
-            
-            .competency-description {
-                padding-right: 0;
-                margin-bottom: 1.5rem;
-            }
-        }
+      }
+
+      .animate-fadeInLeft {
+        animation: fadeInLeft 0.6s ease forwards;
+      }
+
+      .animate-fadeInRight {
+        animation: fadeInRight 0.6s ease forwards;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body class="font-sans text-gray-800 leading-normal">
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">NEXSTRATA</a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="nexstrata-portfolio-page.html">Portfolio</a></li>
-                <li><a href="nexstrata-about-page.html">About</a></li>
-                <li><a href="nexstrata-contact-page.html">Contact</a></li>
-            </ul>
+    <header class="bg-blue-800 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="text-xl font-bold uppercase tracking-wider">
+          <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
         </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="index.html" class="text-white hover:underline">Home</a>
+            </li>
+            <li>
+              <a href="index.html#services" class="text-white hover:underline"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-portfolio-page.html"
+                class="text-white hover:underline"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-about-page.html"
+                class="text-white hover:underline"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-contact-page.html"
+                class="text-white hover:underline"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button
+          class="md:hidden text-white focus:outline-none"
+          id="mobile-menu-button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
+        <div class="container mx-auto px-4">
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#services"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-portfolio-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-about-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="nexstrata-contact-page.html"
+                class="block text-white hover:bg-blue-600 p-2 rounded"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Web & Mobile</h1>
-            <p>Web & mobile solutions drive digital transformation, enhance user engagement, optimize experience, and fuel business growth with innovative, efficient applications.</p>
-        </div>
+    <section
+      class="bg-blue-800 text-white py-16 bg-opacity-85"
+      style="
+        background-image:
+          linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)),
+          url(&quot;/api/placeholder/1200/600&quot;);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Web & Mobile</h1>
+        <p class="text-lg max-w-3xl mx-auto">
+          Web & mobile solutions drive digital transformation, enhance user
+          engagement, optimize experience, and fuel business growth with
+          innovative, efficient applications.
+        </p>
+      </div>
     </section>
 
     <!-- Intro Section -->
-    <section class="service-intro">
-        <div class="container">
-            <div class="service-intro-header">
-                <h2>HOW WE CAN HELP</h2>
-                <h3>Our Core Competencies</h3>
-            </div>
-            <p>Web & mobile solutions cover key areas: design, frontend and backend development, quality assurance, data management, and agile delivery, ensuring user-friendly, secure, and high-performing applications for business success.</p>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="mb-8">
+          <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
+            HOW WE CAN HELP
+          </h2>
+          <h3 class="text-3xl font-bold mb-6">Our Core Competencies</h3>
         </div>
+        <p class="text-gray-600 max-w-4xl">
+          Web & mobile solutions cover key areas: design, frontend and backend
+          development, quality assurance, data management, and agile delivery,
+          ensuring user-friendly, secure, and high-performing applications for
+          business success.
+        </p>
+      </div>
     </section>
 
     <!-- Competencies Section -->
-    <section class="competencies">
-        <div class="container">
-            <!-- Design -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Design</h3>
-                    <p>Design creates visually appealing, user-friendly interfaces, ensuring applications are intuitive, engaging, and aligned with brand identity and user expectations.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>UX Design</li>
-                        <li>UI Design</li>
-                        <li>User Research</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Frontend Development -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Frontend Development</h3>
-                    <p>Frontend development builds the client-side of applications, ensuring responsiveness, improvements, and optimal performance across devices and browsers.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>React</li>
-                        <li>Vue.js</li>
-                        <li>Angular</li>
-                        <li>React Native & iOS/Android</li>
-                        <li>Flutter</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Backend Development -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Backend Development</h3>
-                    <p>Backend development handles the server-side, including database management, server configuration, and service integration, ensuring applications are robust, scalable, and secure.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Java (SpringBoot)</li>
-                        <li>.NET</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Quality Assurance -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Quality Assurance</h3>
-                    <p>Quality assurance (QA) rigorously tests applications for reliability, functionality, performance, and security to ensure they meet requirements and are bug-free.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Manual QA</li>
-                        <li>QA Automation</li>
-                        <li>TDD</li>
-                        <li>Code Audit</li>
-                        <li>Coding Practices & Refactoring</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Data Management & Security -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Data Management & Security</h3>
-                    <p>Data management securely protects user data, ensures regulatory compliance, and maintains insights through encryption, access controls, and robust data governance.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Databases</li>
-                        <li>Data Integration</li>
-                        <li>DevSecOps</li>
-                        <li>Access Control</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Agile Processes & Delivery -->
-            <div class="competency-item">
-                <div class="competency-description">
-                    <h3>Agile Processes & Delivery</h3>
-                    <p>Agile processes focus on flexible, iterative development and timely project delivery, enabling continuous feedback, quick adjustments, and efficient management to meet user needs.</p>
-                </div>
-                <div class="competency-services">
-                    <ul>
-                        <li>Agile mindset</li>
-                        <li>Scrum</li>
-                        <li>Kanban</li>
-                        <li>Agile Tools</li>
-                        <li>Continuous Improvement</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <!-- Design -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-1"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">Design</h3>
+            <p class="text-gray-600">
+              Design creates visually appealing, user-friendly interfaces,
+              ensuring applications are intuitive, engaging, and aligned with
+              brand identity and user expectations.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>UX Design</li>
+              <li>UI Design</li>
+              <li>User Research</li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Frontend Development -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-2"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Frontend Development
+            </h3>
+            <p class="text-gray-600">
+              Frontend development builds the client-side of applications,
+              ensuring responsiveness, improvements, and optimal performance
+              across devices and browsers.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>React</li>
+              <li>Vue.js</li>
+              <li>Angular</li>
+              <li>React Native & iOS/Android</li>
+              <li>Flutter</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-3"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Backend Development
+            </h3>
+            <p class="text-gray-600">
+              Backend development handles the server-side, including database
+              management, server configuration, and service integration,
+              ensuring applications are robust, scalable, and secure.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Node.js</li>
+              <li>Java (SpringBoot)</li>
+              <li>.NET</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quality Assurance -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-4"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Quality Assurance
+            </h3>
+            <p class="text-gray-600">
+              Quality assurance (QA) rigorously tests applications for
+              reliability, functionality, performance, and security to ensure
+              they meet requirements and are bug-free.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Manual QA</li>
+              <li>QA Automation</li>
+              <li>TDD</li>
+              <li>Code Audit</li>
+              <li>Coding Practices & Refactoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Data Management & Security -->
+        <div
+          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
+          id="competency-5"
+        >
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Data Management & Security
+            </h3>
+            <p class="text-gray-600">
+              Data management securely protects user data, ensures regulatory
+              compliance, and maintains insights through encryption, access
+              controls, and robust data governance.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Databases</li>
+              <li>Data Integration</li>
+              <li>DevSecOps</li>
+              <li>Access Control</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Agile Processes & Delivery -->
+        <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-6">
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Agile Processes & Delivery
+            </h3>
+            <p class="text-gray-600">
+              Agile processes focus on flexible, iterative development and
+              timely project delivery, enabling continuous feedback, quick
+              adjustments, and efficient management to meet user needs.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Agile mindset</li>
+              <li>Scrum</li>
+              <li>Kanban</li>
+              <li>Agile Tools</li>
+              <li>Continuous Improvement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Technologies We Work With</h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            We use cutting-edge technologies and frameworks to build modern,
+            scalable web and mobile applications that meet your business needs.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center"
+        >
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">React</span>
+            </div>
+            <h3 class="font-semibold">React.js</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">Vue</span>
+            </div>
+            <h3 class="font-semibold">Vue.js</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">Node</span>
+            </div>
+            <h3 class="font-semibold">Node.js</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">RN</span>
+            </div>
+            <h3 class="font-semibold">React Native</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">Flutter</span>
+            </div>
+            <h3 class="font-semibold">Flutter</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">PWA</span>
+            </div>
+            <h3 class="font-semibold">Progressive Web Apps</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">AWS</span>
+            </div>
+            <h3 class="font-semibold">AWS</h3>
+          </div>
+
+          <div class="p-4">
+            <div
+              class="bg-gray-100 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="text-blue-800 font-bold text-lg">CI/CD</span>
+            </div>
+            <h3 class="font-semibold">CI/CD</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-800 text-white text-center">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6">
+            Transform Your Digital Presence
+          </h2>
+          <p class="mb-8">
+            Our web and mobile development teams create powerful, user-friendly
+            applications that drive engagement and deliver measurable business
+            results.
+          </p>
+          <a
+            href="nexstrata-contact-page.html"
+            class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300"
+            >Contact Us</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="nexstrata-privacy-page.html">PRIVACY & TERMS</a>
-                </div>
-                <p class="copyright">Made with ❤️ by Squarespace</p>
-            </div>
+    <footer class="bg-black text-white py-8 text-center">
+      <div class="container mx-auto px-4">
+        <div class="mb-6">
+          <div class="mb-4">
+            <a
+              href="nexstrata-privacy-page.html"
+              class="text-white mx-4 hover:underline"
+              >PRIVACY & TERMS</a
+            >
+          </div>
+          <p class="text-sm text-gray-400">Made with ❤️ by Squarespace</p>
         </div>
+      </div>
     </footer>
 
     <script>
-        // JavaScript for additional interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-            
-            // Add animation to competency items on scroll
-            const competencyItems = document.querySelectorAll('.competency-item');
-            
-            const observerOptions = {
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateX(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            competencyItems.forEach((item, index) => {
-                item.style.opacity = 0;
-                item.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
-                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(item);
-            });
+      // Mobile menu toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
         });
+
+        // Animate competency sections on scroll
+        const competencyElements = [
+          document.getElementById("competency-1"),
+          document.getElementById("competency-2"),
+          document.getElementById("competency-3"),
+          document.getElementById("competency-4"),
+          document.getElementById("competency-5"),
+          document.getElementById("competency-6"),
+        ];
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const index = competencyElements.indexOf(entry.target);
+                // Alternate animations for left and right
+                if (index % 2 === 0) {
+                  entry.target.classList.add("animate-fadeInLeft");
+                } else {
+                  entry.target.classList.add("animate-fadeInRight");
+                }
+                entry.target.classList.remove("opacity-0");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        competencyElements.forEach((element) => {
+          if (element) observer.observe(element);
+        });
+      });
     </script>
-    <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
