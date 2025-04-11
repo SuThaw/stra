@@ -1,400 +1,333 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEXSTRATA - Tech Architecture</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      @keyframes fadeInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXSTRATA - Tech Architecture</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <style>
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
       }
 
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
       }
 
-      .animate-fadeInLeft {
-        animation: fadeInLeft 0.6s ease forwards;
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
+    }
 
-      .animate-fadeInRight {
-        animation: fadeInRight 0.6s ease forwards;
-      }
-    </style>
-  </head>
-  <body class="font-sans text-gray-800 leading-normal">
-    <!-- Header -->
-    <header class="bg-blue-800 text-white py-4">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="text-xl font-bold uppercase tracking-wider">
-          <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
-        </div>
+    .animate-fadeInLeft {
+      animation: fadeInLeft 0.6s ease forwards;
+    }
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
-          <ul class="flex space-x-8">
-            <li>
-              <a href="index.html" class="text-white hover:underline">Home</a>
-            </li>
-            <li>
-              <a href="index.html#services" class="text-white hover:underline"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-portfolio-page.html"
-                class="text-white hover:underline"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-about-page.html"
-                class="text-white hover:underline"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-contact-page.html"
-                class="text-white hover:underline"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
+    .animate-fadeInRight {
+      animation: fadeInRight 0.6s ease forwards;
+    }
+  </style>
+</head>
 
-        <!-- Mobile menu button -->
-        <button
-          class="md:hidden text-white focus:outline-none"
-          id="mobile-menu-button"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+<body class="font-sans text-gray-800 leading-normal">
+  <!-- Header -->
+  <header class="bg-blue-800 text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="text-xl font-bold uppercase tracking-wider">
+        <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
       </div>
 
-      <!-- Mobile Navigation -->
-      <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
-        <div class="container mx-auto px-4">
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="index.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="index.html#services"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-portfolio-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-about-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-contact-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li>
+            <a href="index.html" class="text-white hover:underline">Home</a>
+          </li>
+          <li>
+            <a href="index.html#services" class="text-white hover:underline">Services</a>
+          </li>
+          <li>
+            <a href="nexstrata-portfolio-page.html" class="text-white hover:underline">Portfolio</a>
+          </li>
+          <li>
+            <a href="nexstrata-about-page.html" class="text-white hover:underline">About</a>
+          </li>
+          <li>
+            <a href="nexstrata-contact-page.html" class="text-white hover:underline">Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-    <!-- Hero Section -->
-    <section
-      class="bg-blue-800 text-white py-16 bg-opacity-85"
-      style="
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
+      <div class="container mx-auto px-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.html" class="block text-white hover:bg-blue-600 p-2 rounded">Home</a>
+          </li>
+          <li>
+            <a href="index.html#services" class="block text-white hover:bg-blue-600 p-2 rounded">Services</a>
+          </li>
+          <li>
+            <a href="nexstrata-portfolio-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">Portfolio</a>
+          </li>
+          <li>
+            <a href="nexstrata-about-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">About</a>
+          </li>
+          <li>
+            <a href="nexstrata-contact-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-800 text-white py-16 bg-opacity-85" style="
         background-image:
-          linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)),
-          url(&quot;/api/placeholder/1200/600&quot;);
+
+          url('img/banner/tech.jpg');
         background-size: cover;
         background-position: center;
-      "
-    >
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tech Architecture</h1>
-        <p class="text-lg max-w-3xl mx-auto">
-          Tech architecture enables your company to build reliable, secure, and
-          efficient systems by focusing on system design, data management,
-          security, and performance; it ensures your technology infrastructure
-          supports business goals, optimizes operations, and fosters innovation.
-        </p>
+      ">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Tech Architecture</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Tech architecture enables your company to build reliable, secure, and
+        efficient systems by focusing on system design, data management,
+        security, and performance; it ensures your technology infrastructure
+        supports business goals, optimizes operations, and fosters innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
+          HOW WE CAN HELP
+        </h2>
+        <h3 class="text-3xl font-bold mb-6">Our Core Competencies</h3>
       </div>
-    </section>
+      <p class="text-gray-600 max-w-4xl">
+        Tech architecture includes key areas: system and application design,
+        data management, security, and compliance, deployment and operations,
+        and performance monitoring. Each is crucial to building a robust and
+        efficient technology infrastructure.
+      </p>
+    </div>
+  </section>
 
-    <!-- Intro Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="mb-8">
-          <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
-            HOW WE CAN HELP
-          </h2>
-          <h3 class="text-3xl font-bold mb-6">Our Core Competencies</h3>
-        </div>
-        <p class="text-gray-600 max-w-4xl">
-          Tech architecture includes key areas: system and application design,
-          data management, security, and compliance, deployment and operations,
-          and performance monitoring. Each is crucial to building a robust and
-          efficient technology infrastructure.
-        </p>
-      </div>
-    </section>
-
-    <!-- Competencies Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <!-- System and Application Architecture -->
-        <div
-          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-          id="competency-1"
-        >
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">
-              System and Application Architecture
-            </h3>
-            <p class="text-gray-600">
-              System and application architecture designs scalable, integrated
-              systems that support business growth and harmonious hybrid
-              applications and services.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>Modules & Components</li>
-              <li>API Interface Patterns</li>
-              <li>Business Logic</li>
-              <li>Application Layers</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Data Management -->
-        <div
-          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-          id="competency-2"
-        >
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">
-              Data Management
-            </h3>
-            <p class="text-gray-600">
-              Data management organizes and stores data efficiently, ensuring
-              its quality, reliability, and decision-making to improve access to
-              insights.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>Data Architecture</li>
-              <li>Data Modeling</li>
-              <li>Data Integration</li>
-              <li>Data Engineering</li>
-              <li>Data Governance</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Security and Compliance -->
-        <div
-          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-          id="competency-3"
-        >
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">
-              Security and Compliance
-            </h3>
-            <p class="text-gray-600">
-              Security and compliance protect sensitive information and ensure
-              regulatory adherence by implementing security measures and
-              managing risks.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>CISSP</li>
-              <li>Authentication and Authorization</li>
-              <li>PKCE</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Deployment and Operations -->
-        <div
-          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-          id="competency-4"
-        >
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">
-              Deployment and Operations
-            </h3>
-            <p class="text-gray-600">
-              Deployment and operations focus on automating processes for
-              efficient system deployment and manages infrastructure for smooth,
-              continuous functioning.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>Containerization & Orchestration</li>
-              <li>DevSecOps</li>
-              <li>CI/CD</li>
-              <li>IaC</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Performance and Observability -->
-        <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-5">
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">
-              Performance and Observability
-            </h3>
-            <p class="text-gray-600">
-              Performance and observability analyze systems for optimal
-              performance, offering insights to drive continuous improvement and
-              spot future mistakes.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>Scalability</li>
-              <li>Performance Tuning</li>
-              <li>Monitoring & Alerts</li>
-              <li>Visualization</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-800 text-white text-center">
-      <div class="container mx-auto px-4">
-        <div class="max-w-2xl mx-auto">
-          <h2 class="text-3xl font-bold mb-6">
-            Build a Strong Technical Foundation
-          </h2>
-          <p class="mb-8">
-            Our expert architects will help you design and implement a scalable,
-            secure, and efficient technical infrastructure that supports your
-            business goals.
+  <!-- Competencies Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <!-- System and Application Architecture -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-1">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">
+            System and Application Architecture
+          </h3>
+          <p class="text-gray-600">
+            System and application architecture designs scalable, integrated
+            systems that support business growth and harmonious hybrid
+            applications and services.
           </p>
-          <a
-            href="nexstrata-contact-page.html"
-            class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300"
-            >Contact Us</a
-          >
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>Modules & Components</li>
+            <li>API Interface Patterns</li>
+            <li>Business Logic</li>
+            <li>Application Layers</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8 text-center">
-      <div class="container mx-auto px-4">
-        <div class="mb-6">
-          <div class="mb-4">
-            <a
-              href="nexstrata-privacy-page.html"
-              class="text-white mx-4 hover:underline"
-              >PRIVACY & TERMS</a
-            >
-          </div>
-          <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
+      <!-- Data Management -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-2">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">
+            Data Management
+          </h3>
+          <p class="text-gray-600">
+            Data management organizes and stores data efficiently, ensuring
+            its quality, reliability, and decision-making to improve access to
+            insights.
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>Data Architecture</li>
+            <li>Data Modeling</li>
+            <li>Data Integration</li>
+            <li>Data Engineering</li>
+            <li>Data Governance</li>
+          </ul>
         </div>
       </div>
-    </footer>
 
-    <script>
-      // Mobile menu toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
+      <!-- Security and Compliance -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-3">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">
+            Security and Compliance
+          </h3>
+          <p class="text-gray-600">
+            Security and compliance protect sensitive information and ensure
+            regulatory adherence by implementing security measures and
+            managing risks.
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>CISSP</li>
+            <li>Authentication and Authorization</li>
+            <li>PKCE</li>
+          </ul>
+        </div>
+      </div>
 
-        mobileMenuButton.addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
-        });
+      <!-- Deployment and Operations -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-4">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">
+            Deployment and Operations
+          </h3>
+          <p class="text-gray-600">
+            Deployment and operations focus on automating processes for
+            efficient system deployment and manages infrastructure for smooth,
+            continuous functioning.
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>Containerization & Orchestration</li>
+            <li>DevSecOps</li>
+            <li>CI/CD</li>
+            <li>IaC</li>
+          </ul>
+        </div>
+      </div>
 
-        // Animate competency sections on scroll
-        const competencyElements = [
-          document.getElementById("competency-1"),
-          document.getElementById("competency-2"),
-          document.getElementById("competency-3"),
-          document.getElementById("competency-4"),
-          document.getElementById("competency-5"),
-        ];
+      <!-- Performance and Observability -->
+      <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-5">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">
+            Performance and Observability
+          </h3>
+          <p class="text-gray-600">
+            Performance and observability analyze systems for optimal
+            performance, offering insights to drive continuous improvement and
+            spot future mistakes.
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>Scalability</li>
+            <li>Performance Tuning</li>
+            <li>Monitoring & Alerts</li>
+            <li>Visualization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const index = competencyElements.indexOf(entry.target);
-                // Alternate animations for left and right
-                if (index % 2 === 0) {
-                  entry.target.classList.add("animate-fadeInLeft");
-                } else {
-                  entry.target.classList.add("animate-fadeInRight");
-                }
-                entry.target.classList.remove("opacity-0");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.1 },
-        );
+  <!-- CTA Section -->
+  <section class="py-16 bg-blue-800 text-white text-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">
+          Build a Strong Technical Foundation
+        </h2>
+        <p class="mb-8">
+          Our expert architects will help you design and implement a scalable,
+          secure, and efficient technical infrastructure that supports your
+          business goals.
+        </p>
+        <a href="nexstrata-contact-page.html"
+          class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300">Contact
+          Us</a>
+      </div>
+    </div>
+  </section>
 
-        competencyElements.forEach((element) => {
-          if (element) observer.observe(element);
-        });
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <div class="mb-6">
+        <div class="mb-4">
+          <a href="nexstrata-privacy-page.html" class="text-white mx-4 hover:underline">PRIVACY & TERMS</a>
+        </div>
+        <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
       });
-    </script>
-  </body>
+
+      // Animate competency sections on scroll
+      const competencyElements = [
+        document.getElementById("competency-1"),
+        document.getElementById("competency-2"),
+        document.getElementById("competency-3"),
+        document.getElementById("competency-4"),
+        document.getElementById("competency-5"),
+      ];
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = competencyElements.indexOf(entry.target);
+              // Alternate animations for left and right
+              if (index % 2 === 0) {
+                entry.target.classList.add("animate-fadeInLeft");
+              } else {
+                entry.target.classList.add("animate-fadeInRight");
+              }
+              entry.target.classList.remove("opacity-0");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      competencyElements.forEach((element) => {
+        if (element) observer.observe(element);
+      });
+    });
+  </script>
+</body>
+
 </html>

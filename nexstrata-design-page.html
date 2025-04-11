@@ -1,339 +1,278 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEXSTRATA - Design Services</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      @keyframes fadeInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXSTRATA - Design Services</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <style>
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
       }
 
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
       }
 
-      .animate-fadeInLeft {
-        animation: fadeInLeft 0.6s ease forwards;
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
+    }
 
-      .animate-fadeInRight {
-        animation: fadeInRight 0.6s ease forwards;
-      }
-    </style>
-  </head>
-  <body class="font-sans text-gray-800 leading-normal">
-    <!-- Header -->
-    <header class="bg-blue-800 text-white py-4">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="text-xl font-bold uppercase tracking-wider">
-          <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
-        </div>
+    .animate-fadeInLeft {
+      animation: fadeInLeft 0.6s ease forwards;
+    }
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
-          <ul class="flex space-x-8">
-            <li>
-              <a href="index.html" class="text-white hover:underline">Home</a>
-            </li>
-            <li>
-              <a href="index.html#services" class="text-white hover:underline"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-portfolio-page.html"
-                class="text-white hover:underline"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-about-page.html"
-                class="text-white hover:underline"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-contact-page.html"
-                class="text-white hover:underline"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
+    .animate-fadeInRight {
+      animation: fadeInRight 0.6s ease forwards;
+    }
+  </style>
+</head>
 
-        <!-- Mobile menu button -->
-        <button
-          class="md:hidden text-white focus:outline-none"
-          id="mobile-menu-button"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+<body class="font-sans text-gray-800 leading-normal">
+  <!-- Header -->
+  <header class="bg-blue-800 text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="text-xl font-bold uppercase tracking-wider">
+        <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
       </div>
 
-      <!-- Mobile Navigation -->
-      <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
-        <div class="container mx-auto px-4">
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="index.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="index.html#services"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-portfolio-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-about-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-contact-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li>
+            <a href="index.html" class="text-white hover:underline">Home</a>
+          </li>
+          <li>
+            <a href="index.html#services" class="text-white hover:underline">Services</a>
+          </li>
+          <li>
+            <a href="nexstrata-portfolio-page.html" class="text-white hover:underline">Portfolio</a>
+          </li>
+          <li>
+            <a href="nexstrata-about-page.html" class="text-white hover:underline">About</a>
+          </li>
+          <li>
+            <a href="nexstrata-contact-page.html" class="text-white hover:underline">Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-    <!-- Hero Section -->
-    <section
-      class="bg-blue-800 text-white py-16 bg-opacity-85"
-      style="
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
+      <div class="container mx-auto px-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.html" class="block text-white hover:bg-blue-600 p-2 rounded">Home</a>
+          </li>
+          <li>
+            <a href="index.html#services" class="block text-white hover:bg-blue-600 p-2 rounded">Services</a>
+          </li>
+          <li>
+            <a href="nexstrata-portfolio-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">Portfolio</a>
+          </li>
+          <li>
+            <a href="nexstrata-about-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">About</a>
+          </li>
+          <li>
+            <a href="nexstrata-contact-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-800 text-white py-16 bg-opacity-85" style="
         background-image:
-          linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)),
-          url(&quot;/api/placeholder/1200/600&quot;);
+
+          url('img/banner/design.jpg');
         background-size: cover;
         background-position: center;
-      "
-    >
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Design</h1>
-        <p class="text-lg max-w-3xl mx-auto">
-          Digital product design delivers innovative, user-specific outcomes,
-          combining appealing visuals and functionality to meet user needs and
-          drive business success.
-        </p>
+      ">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Design</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Digital product design delivers innovative, user-specific outcomes,
+        combining appealing visuals and functionality to meet user needs and
+        drive business success.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
+          HOW WE CAN HELP
+        </h2>
+        <h3 class="text-3xl font-bold mb-6">Our Core Competencies</h3>
       </div>
-    </section>
+      <p class="text-gray-600 max-w-4xl">
+        Digital product design includes key areas: UX design, UI design, and
+        user research. Each ensures the final product is intuitive, engaging,
+        and effectively meets user needs.
+      </p>
+    </div>
+  </section>
 
-    <!-- Intro Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="mb-8">
-          <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
-            HOW WE CAN HELP
-          </h2>
-          <h3 class="text-3xl font-bold mb-6">Our Core Competencies</h3>
-        </div>
-        <p class="text-gray-600 max-w-4xl">
-          Digital product design includes key areas: UX design, UI design, and
-          user research. Each ensures the final product is intuitive, engaging,
-          and effectively meets user needs.
-        </p>
-      </div>
-    </section>
-
-    <!-- Competencies Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <!-- UX Design -->
-        <div
-          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-          id="competency-1"
-        >
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">UX Design</h3>
-            <p class="text-gray-600">
-              UX design focuses on optimizing the overall user experience,
-              ensuring the product is intuitive, functional, and meets user
-              needs by creating a smooth, straightforward journey.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>Usability</li>
-              <li>Information Architecture</li>
-              <li>Accessibility</li>
-              <li>Innovation and Creativity</li>
-              <li>User Journeys</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- UI Design -->
-        <div
-          class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-          id="competency-2"
-        >
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">UI Design</h3>
-            <p class="text-gray-600">
-              UI design focuses on the visual elements of the product with
-              consistent colors, typography, and interactive features, ensuring
-              an aesthetically pleasing interface that enhances the user
-              experience.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>Wireframes</li>
-              <li>Responsive Design</li>
-              <li>Brand Consistency</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- User Research -->
-        <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-3">
-          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-            <h3 class="text-2xl text-blue-800 font-bold mb-4">User Research</h3>
-            <p class="text-gray-600">
-              User research collects insights and feedback from users to guide
-              design decisions, helping designers understand scenarios, needs,
-              and preferences better.
-            </p>
-          </div>
-          <div class="md:w-1/3">
-            <ul class="space-y-2 text-gray-700">
-              <li>User Interviews</li>
-              <li>User Experiments</li>
-              <li>Usability Testing</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-800 text-white text-center">
-      <div class="container mx-auto px-4">
-        <div class="max-w-2xl mx-auto">
-          <h2 class="text-3xl font-bold mb-6">
-            Ready to Enhance Your User Experience?
-          </h2>
-          <p class="mb-8">
-            Our design experts will help you create intuitive, engaging digital
-            products that delight your users and drive business growth.
+  <!-- Competencies Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <!-- UX Design -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-1">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">UX Design</h3>
+          <p class="text-gray-600">
+            UX design focuses on optimizing the overall user experience,
+            ensuring the product is intuitive, functional, and meets user
+            needs by creating a smooth, straightforward journey.
           </p>
-          <a
-            href="nexstrata-contact-page.html"
-            class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300"
-            >Contact Us</a
-          >
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>Usability</li>
+            <li>Information Architecture</li>
+            <li>Accessibility</li>
+            <li>Innovation and Creativity</li>
+            <li>User Journeys</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8 text-center">
-      <div class="container mx-auto px-4">
-        <div class="mb-6">
-          <div class="mb-4">
-            <a
-              href="nexstrata-privacy-page.html"
-              class="text-white mx-4 hover:underline"
-              >PRIVACY & TERMS</a
-            >
-          </div>
-          <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
+      <!-- UI Design -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-2">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">UI Design</h3>
+          <p class="text-gray-600">
+            UI design focuses on the visual elements of the product with
+            consistent colors, typography, and interactive features, ensuring
+            an aesthetically pleasing interface that enhances the user
+            experience.
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>Wireframes</li>
+            <li>Responsive Design</li>
+            <li>Brand Consistency</li>
+          </ul>
         </div>
       </div>
-    </footer>
 
-    <script>
-      // Mobile menu toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
+      <!-- User Research -->
+      <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-3">
+        <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+          <h3 class="text-2xl text-blue-800 font-bold mb-4">User Research</h3>
+          <p class="text-gray-600">
+            User research collects insights and feedback from users to guide
+            design decisions, helping designers understand scenarios, needs,
+            and preferences better.
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <ul class="space-y-2 text-gray-700">
+            <li>User Interviews</li>
+            <li>User Experiments</li>
+            <li>Usability Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        mobileMenuButton.addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
-        });
+  <!-- CTA Section -->
+  <section class="py-16 bg-blue-800 text-white text-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">
+          Ready to Enhance Your User Experience?
+        </h2>
+        <p class="mb-8">
+          Our design experts will help you create intuitive, engaging digital
+          products that delight your users and drive business growth.
+        </p>
+        <a href="nexstrata-contact-page.html"
+          class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300">Contact
+          Us</a>
+      </div>
+    </div>
+  </section>
 
-        // Animate competency sections on scroll
-        const competencyElements = [
-          document.getElementById("competency-1"),
-          document.getElementById("competency-2"),
-          document.getElementById("competency-3"),
-        ];
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <div class="mb-6">
+        <div class="mb-4">
+          <a href="nexstrata-privacy-page.html" class="text-white mx-4 hover:underline">PRIVACY & TERMS</a>
+        </div>
+        <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
+      </div>
+    </div>
+  </footer>
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const index = competencyElements.indexOf(entry.target);
-                // Alternate animations for left and right
-                if (index % 2 === 0) {
-                  entry.target.classList.add("animate-fadeInLeft");
-                } else {
-                  entry.target.classList.add("animate-fadeInRight");
-                }
-                entry.target.classList.remove("opacity-0");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.1 },
-        );
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        competencyElements.forEach((element) => {
-          if (element) observer.observe(element);
-        });
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
       });
-    </script>
-  </body>
+
+      // Animate competency sections on scroll
+      const competencyElements = [
+        document.getElementById("competency-1"),
+        document.getElementById("competency-2"),
+        document.getElementById("competency-3"),
+      ];
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = competencyElements.indexOf(entry.target);
+              // Alternate animations for left and right
+              if (index % 2 === 0) {
+                entry.target.classList.add("animate-fadeInLeft");
+              } else {
+                entry.target.classList.add("animate-fadeInRight");
+              }
+              entry.target.classList.remove("opacity-0");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      competencyElements.forEach((element) => {
+        if (element) observer.observe(element);
+      });
+    });
+  </script>
+</body>
+
 </html>

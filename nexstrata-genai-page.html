@@ -1,367 +1,302 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEXSTRATA - Gen AI Services</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXSTRATA - Gen AI Services</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      .animate-fadeInUp {
-        animation: fadeInUp 0.6s ease forwards;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .delay-100 {
-        animation-delay: 0.1s;
-      }
-      .delay-200 {
-        animation-delay: 0.2s;
-      }
-      .delay-300 {
-        animation-delay: 0.3s;
-      }
-      .delay-400 {
-        animation-delay: 0.4s;
-      }
-    </style>
-  </head>
-  <body class="font-sans text-gray-800 leading-normal">
-    <!-- Header -->
-    <header class="bg-blue-800 text-white py-4">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="text-xl font-bold uppercase tracking-wider">
-          <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
-        </div>
+    .animate-fadeInUp {
+      animation: fadeInUp 0.6s ease forwards;
+    }
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
-          <ul class="flex space-x-8">
-            <li>
-              <a href="index.html" class="text-white hover:underline">Home</a>
-            </li>
-            <li>
-              <a href="index.html#services" class="text-white hover:underline"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-portfolio-page.html"
-                class="text-white hover:underline"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-about-page.html"
-                class="text-white hover:underline"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-contact-page.html"
-                class="text-white hover:underline"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
 
-        <!-- Mobile menu button -->
-        <button
-          class="md:hidden text-white focus:outline-none"
-          id="mobile-menu-button"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 leading-normal">
+  <!-- Header -->
+  <header class="bg-blue-800 text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="text-xl font-bold uppercase tracking-wider">
+        <a href="index.html" class="text-white no-underline">NEXSTRATA</a>
       </div>
 
-      <!-- Mobile Navigation -->
-      <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
-        <div class="container mx-auto px-4">
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="index.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="index.html#services"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-portfolio-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-about-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="nexstrata-contact-page.html"
-                class="block text-white hover:bg-blue-600 p-2 rounded"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li>
+            <a href="index.html" class="text-white hover:underline">Home</a>
+          </li>
+          <li>
+            <a href="index.html#services" class="text-white hover:underline">Services</a>
+          </li>
+          <li>
+            <a href="nexstrata-portfolio-page.html" class="text-white hover:underline">Portfolio</a>
+          </li>
+          <li>
+            <a href="nexstrata-about-page.html" class="text-white hover:underline">About</a>
+          </li>
+          <li>
+            <a href="nexstrata-contact-page.html" class="text-white hover:underline">Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-    <!-- Hero Section -->
-    <section
-      class="bg-blue-800 text-white py-16 bg-opacity-85"
-      style="
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden hidden bg-blue-700 py-2" id="mobile-menu">
+      <div class="container mx-auto px-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.html" class="block text-white hover:bg-blue-600 p-2 rounded">Home</a>
+          </li>
+          <li>
+            <a href="index.html#services" class="block text-white hover:bg-blue-600 p-2 rounded">Services</a>
+          </li>
+          <li>
+            <a href="nexstrata-portfolio-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">Portfolio</a>
+          </li>
+          <li>
+            <a href="nexstrata-about-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">About</a>
+          </li>
+          <li>
+            <a href="nexstrata-contact-page.html" class="block text-white hover:bg-blue-600 p-2 rounded">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-800 text-white py-16 bg-opacity-85" style="
         background-image:
-          linear-gradient(rgba(0, 51, 179, 0.85), rgba(0, 51, 179, 0.85)),
-          url(&quot;/api/placeholder/1200/600&quot;);
+
+          url('img/banner/gen_ai.jpg');
         background-size: cover;
         background-position: center;
-      "
-    >
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Gen AI</h1>
-        <p class="text-lg max-w-3xl mx-auto">
-          Gen AI Services empower your company to drive growth, enhance
-          productivity, and gain a competitive edge through advanced AI
-          technologies, personalized experiences, and innovative insights.
+      ">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Gen AI</h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Gen AI Services empower your company to drive growth, enhance
+        productivity, and gain a competitive edge through advanced AI
+        technologies, personalized experiences, and innovative insights.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="mb-12">
+        <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
+          HOW CAN WE HELP
+        </h2>
+        <h3 class="text-3xl font-bold mb-6">
+          How can your business benefit from leveraging GenAI?
+        </h3>
+      </div>
+      <div class="mb-12">
+        <p class="text-gray-600 max-w-4xl">
+          GenAI covers key areas essential for modern businesses, including
+          strategy, development, model evaluation, deployment, and third-party
+          integration, ensuring seamless implementation and scalable
+          solutions.
         </p>
       </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="mb-12">
-          <h2 class="text-blue-800 uppercase font-semibold text-sm mb-2">
-            HOW CAN WE HELP
-          </h2>
-          <h3 class="text-3xl font-bold mb-6">
-            How can your business benefit from leveraging GenAI?
-          </h3>
+      <!-- Competencies Section -->
+      <div>
+        <!-- Business Strategy -->
+        <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-1">
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Business Strategy
+            </h3>
+            <p class="text-gray-600">
+              A solid business strategy aligns your company's vision with
+              actionable goals, using GenAI to optimize processes, improve
+              decision-making, and drive innovation.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Business Goals</li>
+              <li>Use Cases Exploration</li>
+              <li>Feasibility Analysis</li>
+            </ul>
+          </div>
         </div>
-        <div class="mb-12">
-          <p class="text-gray-600 max-w-4xl">
-            GenAI covers key areas essential for modern businesses, including
-            strategy, development, model evaluation, deployment, and third-party
-            integration, ensuring seamless implementation and scalable
-            solutions.
-          </p>
+
+        <!-- Gen AI Development -->
+        <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-2">
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Gen AI Development
+            </h3>
+            <p class="text-gray-600">
+              GenAI development creates custom AI solutions tailored to your
+              needs, building advanced models to solve complex problems and
+              deliver unique value.
+            </p>
+          </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Prompt Engineering</li>
+              <li>Fine-Tuning</li>
+              <li>Build RAG</li>
+              <li>Guardrails</li>
+              <li>Automate with agent</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Competencies Section -->
-        <div>
-          <!-- Business Strategy -->
-          <div
-            class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-            id="competency-1"
-          >
-            <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-              <h3 class="text-2xl text-blue-800 font-bold mb-4">
-                Business Strategy
-              </h3>
-              <p class="text-gray-600">
-                A solid business strategy aligns your company's vision with
-                actionable goals, using GenAI to optimize processes, improve
-                decision-making, and drive innovation.
-              </p>
-            </div>
-            <div class="md:w-1/3">
-              <ul class="space-y-2 text-gray-700">
-                <li>Business Goals</li>
-                <li>Use Cases Exploration</li>
-                <li>Feasibility Analysis</li>
-              </ul>
-            </div>
+        <!-- Model Evaluation -->
+        <div class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0" id="competency-3">
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">
+              Model Evaluation
+            </h3>
+            <p class="text-gray-600">
+              Model evaluation ensures your AI models perform accurately and
+              reliably, meeting required standards through rigorous testing
+              and validation.
+            </p>
           </div>
-
-          <!-- Gen AI Development -->
-          <div
-            class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-            id="competency-2"
-          >
-            <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-              <h3 class="text-2xl text-blue-800 font-bold mb-4">
-                Gen AI Development
-              </h3>
-              <p class="text-gray-600">
-                GenAI development creates custom AI solutions tailored to your
-                needs, building advanced models to solve complex problems and
-                deliver unique value.
-              </p>
-            </div>
-            <div class="md:w-1/3">
-              <ul class="space-y-2 text-gray-700">
-                <li>Prompt Engineering</li>
-                <li>Fine-Tuning</li>
-                <li>Build RAG</li>
-                <li>Guardrails</li>
-                <li>Automate with agent</li>
-              </ul>
-            </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Performance metrics</li>
+              <li>Evaluation</li>
+              <li>Benchmarking</li>
+            </ul>
           </div>
+        </div>
 
-          <!-- Model Evaluation -->
-          <div
-            class="flex flex-col md:flex-row border-b border-gray-300 py-8 opacity-0"
-            id="competency-3"
-          >
-            <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-              <h3 class="text-2xl text-blue-800 font-bold mb-4">
-                Model Evaluation
-              </h3>
-              <p class="text-gray-600">
-                Model evaluation ensures your AI models perform accurately and
-                reliably, meeting required standards through rigorous testing
-                and validation.
-              </p>
-            </div>
-            <div class="md:w-1/3">
-              <ul class="space-y-2 text-gray-700">
-                <li>Performance metrics</li>
-                <li>Evaluation</li>
-                <li>Benchmarking</li>
-              </ul>
-            </div>
+        <!-- Deployment -->
+        <div class="flex flex-col md:flex-row py-8 opacity-0" id="competency-4">
+          <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
+            <h3 class="text-2xl text-blue-800 font-bold mb-4">Deployment</h3>
+            <p class="text-gray-600">
+              Deployment integrates AI models into your systems, ensuring
+              scalability and seamless alignment with your business
+              operations.
+            </p>
           </div>
-
-          <!-- Deployment -->
-          <div
-            class="flex flex-col md:flex-row py-8 opacity-0"
-            id="competency-4"
-          >
-            <div class="md:w-2/3 md:pr-8 mb-4 md:mb-0">
-              <h3 class="text-2xl text-blue-800 font-bold mb-4">Deployment</h3>
-              <p class="text-gray-600">
-                Deployment integrates AI models into your systems, ensuring
-                scalability and seamless alignment with your business
-                operations.
-              </p>
-            </div>
-            <div class="md:w-1/3">
-              <ul class="space-y-2 text-gray-700">
-                <li>Security & Data Privacy</li>
-                <li>Scalability</li>
-                <li>Monitoring and Alerting</li>
-              </ul>
-            </div>
+          <div class="md:w-1/3">
+            <ul class="space-y-2 text-gray-700">
+              <li>Security & Data Privacy</li>
+              <li>Scalability</li>
+              <li>Monitoring and Alerting</li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-800 text-white text-center">
-      <div class="container mx-auto px-4">
-        <div class="max-w-2xl mx-auto">
-          <h2 class="text-3xl font-bold mb-6">
-            Ready to Harness the Power of AI?
-          </h2>
-          <p class="mb-8">
-            Our GenAI experts will help you implement cutting-edge AI solutions
-            that drive innovation and give you a competitive advantage.
-          </p>
-          <a
-            href="nexstrata-contact-page.html"
-            class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300"
-            >Contact Us</a
-          >
-        </div>
+  <!-- CTA Section -->
+  <section class="py-16 bg-blue-800 text-white text-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">
+          Ready to Harness the Power of AI?
+        </h2>
+        <p class="mb-8">
+          Our GenAI experts will help you implement cutting-edge AI solutions
+          that drive innovation and give you a competitive advantage.
+        </p>
+        <a href="nexstrata-contact-page.html"
+          class="inline-block px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-800 transition duration-300">Contact
+          Us</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8 text-center">
-      <div class="container mx-auto px-4">
-        <div class="mb-6">
-          <div class="mb-4">
-            <a
-              href="nexstrata-privacy-page.html"
-              class="text-white mx-4 hover:underline"
-              >PRIVACY & TERMS</a
-            >
-          </div>
-          <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <div class="mb-6">
+        <div class="mb-4">
+          <a href="nexstrata-privacy-page.html" class="text-white mx-4 hover:underline">PRIVACY & TERMS</a>
         </div>
+        <p class="text-sm text-gray-400">Made with ❤️ by NexStrata</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-      // Mobile menu toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        mobileMenuButton.addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
-        });
-
-        // Animate competency sections on scroll
-        const competencyElements = [
-          document.getElementById("competency-1"),
-          document.getElementById("competency-2"),
-          document.getElementById("competency-3"),
-          document.getElementById("competency-4"),
-        ];
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const index = competencyElements.indexOf(entry.target);
-                entry.target.classList.add("animate-fadeInUp");
-                entry.target.style.animationDelay = index * 0.1 + "s";
-                entry.target.classList.remove("opacity-0");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.1 },
-        );
-
-        competencyElements.forEach((element) => {
-          if (element) observer.observe(element);
-        });
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
       });
-    </script>
-  </body>
+
+      // Animate competency sections on scroll
+      const competencyElements = [
+        document.getElementById("competency-1"),
+        document.getElementById("competency-2"),
+        document.getElementById("competency-3"),
+        document.getElementById("competency-4"),
+      ];
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = competencyElements.indexOf(entry.target);
+              entry.target.classList.add("animate-fadeInUp");
+              entry.target.style.animationDelay = index * 0.1 + "s";
+              entry.target.classList.remove("opacity-0");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      competencyElements.forEach((element) => {
+        if (element) observer.observe(element);
+      });
+    });
+  </script>
+</body>
+
 </html>
